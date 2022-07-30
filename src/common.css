@@ -61,10 +61,18 @@ background-color: cadetblue;
     padding: 25px;
     font-size: 15px;
 }
-.row2{
-    background-color: rgb(160, 95, 95);
-    padding: 25px;
+#rw2 {
+    background-color: rgb(5, 5, 9);
+    color: white;
     font-size: 15px;
+}
+.row2 #rw2 {
+    background-color: rgb(5, 5, 9);
+    color: white;
+    font-size: 15px;
+    justify-content: center;
+    /* padding-left: 85px; */
+    text-align: left;
 }
 .text-center{
     color: red;
