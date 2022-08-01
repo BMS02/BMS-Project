@@ -84,7 +84,7 @@ function ContactUs() {
             <div className="icon"></div>
             <strong>Write to us</strong>
             <p>
-              Be it an enquiry, feedback or a simple suggestion, write to us &
+              Be it an enquiry, feedback or a simple suggestion, write to us and
               we'll get back to you.
               <a href="/" ><h6>BankQuery@bankManage.com</h6></a>
 

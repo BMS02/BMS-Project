@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {TextField, Grid, Card, CardContent, Button} from "@mui/material"
+import ShowBanks from "./ShowBanks";
 function Addbank(){
 
     const[data,setData]=useState([]);
@@ -14,7 +15,7 @@ return(
     <div>
         <Card>
             <CardContent>
-                <Grid container>
+                <Grid container >
                     <Grid item xs={4}>
                         Bank Name:
                     </Grid>
@@ -22,32 +23,40 @@ return(
                         <TextField label="Enter Bank Name" variant="outlined" onChange={(e)=>setDetails({name:e.target.value})}/>
                        
                     </Grid>
+                </Grid>
+<br />
+                <Grid container >
 
                     <Grid item xs={4}>
                       City Name:
                     </Grid>
+
                     <Grid item xs={8}>
                         <TextField label="Enter City" variant="outlined" onChange={(e)=>setDetails({...details,branch:e.target.value})}/>
                     </Grid>
-
+                    </Grid>
+<br />
+                    <Grid container >
                     <Grid item xs={4}>
                       Branch Name:
                     </Grid>
                     <Grid item xs={8}>
                         <TextField label="Enter Branch Name" variant="outlined" onChange={(e)=>setDetails({...details,City:e.target.value})}/>
                     </Grid>
-
+                    </Grid>
+<br />
+                    <Grid container >
                     <Grid item xs={4}>
 
                     </Grid>
                     <Grid item xs={2}>
-                        <Button variant="contained" onClick={handleclick}>Submit</Button>
+                        <Button variant="contained" onClick={()=>handleclick()}>Submit</Button>
 
+                    </Grid>
                     </Grid>
 
                     
 
-                </Grid>
             </CardContent>
         </Card>
         <div>
@@ -56,9 +65,11 @@ return(
                     data.map((item)=>{
                         return(
                             <table>
+                                <tr>
                                 <td>{item.name}</td>
                                 <td>{item.branch}</td>
                                 <td>{item.City}</td>
+                                </tr>
                             </table>
 
                         
@@ -67,6 +78,7 @@ return(
                 }
             </Grid>
         </div>
+        <ShowBanks props={data}/>
       
     </div>
     

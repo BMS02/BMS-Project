@@ -1,7 +1,8 @@
 import React from "react";
+import Addbank from "./Addbank";
 import {Grid,Card, CardContent} from "@mui/material";
 
-function ShowItems(item){
+function ShowItems({item}){
 
     return(
 
