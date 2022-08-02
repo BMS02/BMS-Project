@@ -1,35 +1,35 @@
-import React from "react";
-import Addbank from "./Addbank";
-import {Grid,Card, CardContent} from "@mui/material";
+// import React from "react";
+// import Addbank from "./Addbank";
+// import {Grid,Card, CardContent} from "@mui/material";
 
-function ShowItems({item}){
+// function ShowItems({item}){
 
-    return(
+//     return(
 
-        <div>
-               <Card className="rowdata">
-        <CardContent>
-        <Grid container>
-            <Grid item xs={4}>
-              <h2> {item.name}</h2> 
-            </Grid>
+//         <div>
+//                <Card className="rowdata">
+//         <CardContent>
+//         <Grid container>
+//             <Grid item xs={4}>
+//               <h2> {item.name}</h2> 
+//             </Grid>
 
-            <Grid item xs={4}>
-                <h5>{item.branch}</h5>
+//             <Grid item xs={4}>
+//                 <h5>{item.branch}</h5>
                 
-            </Grid>
+//             </Grid>
 
-            <Grid>
-               <h3>{item.City}</h3>
-            </Grid>
+//             <Grid>
+//                <h3>{item.City}</h3>
+//             </Grid>
             
 
-        </Grid>
-        </CardContent>
-        </Card>
+//         </Grid>
+//         </CardContent>
+//         </Card>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default ShowItems
+// export default ShowItems

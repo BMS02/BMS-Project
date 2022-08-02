@@ -11,6 +11,9 @@ import ShowBanks from './Components/Pages/ShowBanks';
 // import Debit from './Components/Pages/Deposit';
 import ShowItems from './Components/Pages/ShowItems';
 import Deposit from './Components/Pages/Deposit';
+import CreateAcc from './Components/Pages/CreateAcc';
+import { ManageAccount } from './Components/Account/Manage_Account';
+import UserDyta from './Components/Account/UserDyta';
 
 function App() {
   return (
@@ -21,10 +24,13 @@ function App() {
       <Route path='/onlinebanking' element={<OnlineBanking/>}/>
       <Route path='/searchbank' element={<SearchBank/>}/>
       <Route path='/contactus' element={<ContactUs/>}/>
+      <Route path='/createacc' element={<CreateAcc/>}/>
+      <Route path='/account/manageaccount' element={<ManageAccount/>}/>
       <Route path='/components/pages/addbank' element={<AddBank/>}/>
       <Route path='/components/pages/showbank' element={<ShowBanks/>}/>
       <Route path='/components/pages/deposit' element={<Deposit/>}/>
       <Route path='/components/pages/showitems' element={<ShowItems/>}/>
+      <Route path='/components/account/userdyta' element={<UserDyta/>}/>
     </Routes>
     </BrowserRouter>
     

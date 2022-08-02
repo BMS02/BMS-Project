@@ -28,6 +28,12 @@ import ShowItems from "./ShowItems";
 
 function OnlineBanking(){
   const [val,setVal]=useState("addbank");
+  const [data,setData]=useState([])
+  
+  localStorage.setItem("userdata", JSON.stringify(data));
+  const handleSubmit=(details)=>{
+    setData([...data,details])
+  }
   return(
     <div>
       <h3>online banking - diffrent tabs to explore</h3>
@@ -35,16 +41,16 @@ function OnlineBanking(){
         <Tab value="addbank" label="Add Bank"/>
         <Tab value="showbank" label="Show Bank"/>
         <Tab value="deposit" label="Deposit"/>
-        <Tab value="showitem" label="SHow Item"/>
+        {/* <Tab value="showitem" label="SHow Item"/> */}
         {/* <Tab value="deposit" label="Deposit"/> */}
         {/* <Tab value="showitems" label="ShowItems"/> */}
 
       </Tabs>
 
-      {val==="addbank" && <Addbank/>}
-      {val==="showbank" && <ShowBanks/>}
+      {val==="addbank" && <Addbank handleSubmit={handleSubmit}/>}
+      {val==="showbank" && <ShowBanks />}
       {val==="deposit" && <Deposit/>}
-      {val==="showitem" && <ShowItems />}
+      {/* {val==="showitem" && <ShowItems />} */}
       {/* {val==="deposit" && <Deposit/>} */}
 
 

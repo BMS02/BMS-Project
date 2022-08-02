@@ -4,7 +4,7 @@ import React from 'react'
 // import ContactUs from '../NavPages/ContactUs'
 // import SearchBank from '../NavPages/SearchBank'
 import {Link} from 'react-router-dom'
-
+// mainNavbar
 function Navbar() {
   return (
     <nav className='nav'>
@@ -13,6 +13,9 @@ function Navbar() {
       <li> <Link to="/">Home</Link></li>
     <li><Link to="/onlinebanking">Online Banking</Link></li>
     <li><Link to="/searchBank">Search Bank</Link></li>
+    <li><Link to="/createAcc">Create New Account</Link></li>
+    <li><Link to="/account/manageAccount">Manage Account</Link></li>
+
     <li><Link to="/contactus">Contact Us</Link></li>
 </ul>
 
