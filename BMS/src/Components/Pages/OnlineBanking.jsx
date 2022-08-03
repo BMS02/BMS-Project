@@ -1,6 +1,6 @@
 // import React from 'react'
 // import {Link} from 'react-router-dom'
-// // import {AddBank} from './OnlineBanking/Addbank';
+// // import {AddBank} from './OnlineBanking/AddBranch';
 
 
 
@@ -19,8 +19,8 @@
 
 import React, {useState} from "react";
 import {Tabs,Tab} from "@mui/material";
-import Addbank from "./Addbank";
-import ShowBanks from "./ShowBanks";
+import AddBranch from "./AddBranch";
+import ShowBranch from "./ShowBranch";
 import Deposit from "./Deposit";
 import ShowItems from "./ShowItems";
 // import Deposit from "./Deb11";
@@ -38,8 +38,8 @@ function OnlineBanking(){
     <div>
       <h3>online banking - diffrent tabs to explore</h3>
       <Tabs value={val} onChange={(e,val)=> setVal(val)}>
-        <Tab value="addbank" label="Add Bank"/>
-        <Tab value="showbank" label="Show Bank"/>
+        <Tab value="addbranch" label="Add Branch"/>
+        <Tab value="showbranch" label="Show Branch"/>
         <Tab value="deposit" label="Deposit"/>
         {/* <Tab value="showitem" label="SHow Item"/> */}
         {/* <Tab value="deposit" label="Deposit"/> */}
@@ -47,8 +47,8 @@ function OnlineBanking(){
 
       </Tabs>
 
-      {val==="addbank" && <Addbank handleSubmit={handleSubmit}/>}
-      {val==="showbank" && <ShowBanks />}
+      {val==="addbranch" && <AddBranch handleSubmit={handleSubmit}/>}
+      {val==="showbranch" && <ShowBranch />}
       {val==="deposit" && <Deposit/>}
       {/* {val==="showitem" && <ShowItems />} */}
       {/* {val==="deposit" && <Deposit/>} */}

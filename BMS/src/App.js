@@ -6,8 +6,8 @@ import OnlineBanking from "./Components/Pages/OnlineBanking";
 import SearchBank from "./Components/Pages/SearchBank";
 import ContactUs from "./Components/Pages/ContactUs"
 // import Debit from './Components/Pages/Debit';
-import AddBank from "./Components/Pages/Addbank";
-import ShowBanks from './Components/Pages/ShowBanks';
+import AddBranch from "./Components/Pages/AddBranch";
+import ShowBranch from './Components/Pages/ShowBranch';
 // import Debit from './Components/Pages/Deposit';
 import ShowItems from './Components/Pages/ShowItems';
 import Deposit from './Components/Pages/Deposit';
@@ -26,8 +26,8 @@ function App() {
       <Route path='/contactus' element={<ContactUs/>}/>
       <Route path='/createacc' element={<CreateAcc/>}/>
       <Route path='/account/manageaccount' element={<ManageAccount/>}/>
-      <Route path='/components/pages/addbank' element={<AddBank/>}/>
-      <Route path='/components/pages/showbank' element={<ShowBanks/>}/>
+      <Route path='/components/pages/AddBranch' element={<AddBranch/>}/>
+      <Route path='/components/pages/showbranch' element={<ShowBranch/>}/>
       <Route path='/components/pages/deposit' element={<Deposit/>}/>
       <Route path='/components/pages/showitems' element={<ShowItems/>}/>
       <Route path='/components/account/userdyta' element={<UserDyta/>}/>
