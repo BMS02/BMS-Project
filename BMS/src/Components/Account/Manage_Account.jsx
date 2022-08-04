@@ -3,9 +3,18 @@ import { Tab,Tabs } from "@mui/material";
 import { Link } from "react-router-dom";
 import UserDyta from "./UserDyta";
 import Transaction from "./Transaction";
+import { UserData } from "./User";
 
 export const ManageAccount = () => {
   const [val, setVal] = useState("userdyta");
+  const[benef,setBenef]=useState(UserData);
+
+  const [transactiondetails,setTransactiondetails]=useState([])
+
+  const handletransaction=(submit)=>{
+    setTransactiondetails(submit)
+  }
+  console.log(transactiondetails)
 
   return (
     <div className="ManageAccount">
@@ -20,7 +29,7 @@ export const ManageAccount = () => {
         </Tabs>
       </div>
       {val === "userDyta" && <UserDyta />}
-      {val === "transaction" && <Transaction />}
+      {val === "transaction" && <Transaction  handletransaction={handletransaction} benef={benef} />}
     </div>
   );
 };
