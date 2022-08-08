@@ -4,9 +4,12 @@ import { UserData } from './User';
 import { isEditable } from '@testing-library/user-event/dist/utils';
 
 
+
 function Transaction({handletransaction,benef}) {
+    const result1 = JSON.parse(localStorage.getItem("newuserdata"));
+
   const[accholder,setAccholder]= useState({});
-  // const[accno, setAccno]=useState(0);
+  const[accno, setAccno]=useState(0);
   // const [amount,setAmount]=useState(0);
   const[submit,setSubmit]=useState({});
   const[msg,setMsg]=useState(benef);
@@ -45,8 +48,8 @@ return (
                 return <MenuItem value={item.account_no}>{item.account_no}</MenuItem>;
               })}
             </Select>
-             {/* <TextField label="Account holder name" variant="outlined" onChange={(e)=> setAccholder({name:e.target.value})} />
-            <TextField label="Account Number" variant="outlined" onChange={(e)=> setAccholder({...accholder,No:e.target.value})} /> */}
+             {/* <TextField label="Account holder name" variant="outlined" onChange={(e)=> setAccholder({name:e.target.value})} /> */}
+            {/* <TextField label="Account Number" variant="outlined" onChange={(e)=> setAccholder({...accholder,No:e.target.value})} /> */}
             <TextField label="Deposit Amount" variant="outlined" onChange={(e)=> setAccholder({...accholder,amnt:e.target.value})}/>
             <Button variant="contained" onClick={()=>handletransaction(accholder)}>Submit Amount</Button>
             {/* <Button onClick={handleCancel}>Cancel</Button> */}
@@ -57,6 +60,7 @@ return (
                 {
                 result.map((item)=>{
                     return(
+
                       <div>
                       
                         <h3>{item.name}</h3>

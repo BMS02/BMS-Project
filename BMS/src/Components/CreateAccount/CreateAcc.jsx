@@ -11,12 +11,17 @@ function CreateAcc({handleSubmit}) {
     Mobile: "9604786415",
     Aadhar: "1880001234",
     Address: "Aurangabad",
+    Password: "9595",
+    Acc_Bal: "10000"
   });
   // const [data, setData] = useState([]);
   // const handleSubmit = () => {
   //   setData([...data, formDetail]);
   //   console.log(data);
   // };
+  const handleReset =()=>{
+    setFormDetail(" ");
+  }
   return (
     <div className="form">
       <form>
@@ -43,6 +48,7 @@ function CreateAcc({handleSubmit}) {
           <Grid item xs={4}>
             <TextField
               label="Email"
+              type="email"
               variant="outlined"
               onChange={(e) =>
                 setFormDetail({ ...formDetail, email: e.target.value })
@@ -71,6 +77,7 @@ function CreateAcc({handleSubmit}) {
           <Grid item xs={4}>
             <TextField
               label="Mobile Number"
+              type="number"
               variant="outlined"
               onChange={(e) =>
                 setFormDetail({ ...formDetail, Mobile: e.target.value })
@@ -88,6 +95,7 @@ function CreateAcc({handleSubmit}) {
             <TextField
               label="Aadhar Number"
               variant="outlined"
+              type="number"
               onChange={(e) =>
                 setFormDetail({ ...formDetail, Aadhar: e.target.value })
               }
@@ -109,17 +117,42 @@ function CreateAcc({handleSubmit}) {
         </Grid>
         <br />
         <Grid container>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={1}>PassWord :</Grid>
+          <Grid item xs={4}> <TextField
+              label="Password"
+              variant="outlined"
+              type="number"
+
+              onChange={(e) =>
+                setFormDetail({ ...formDetail, password: e.target.value })
+              }
+            /></Grid>
+                      <Grid item xs={1}>Balance:</Grid>
+
+            <Grid item xs={4}> <TextField
+              label="Acc_Bal"
+              variant="outlined"
+              type="number"
+
+              onChange={(e) =>
+                setFormDetail({ ...formDetail, Acc_Bal: e.target.value })
+              }
+              /></Grid>
+              </Grid>
+              <br />
+              <Grid container>
+
+<Grid item xs={2}></Grid>
           <Grid item xs={2}>
             <Button variant="contained" onClick={() => handleSubmit(formDetail)}>
               Submit
             </Button>
           </Grid>
-          <Grid item xs={3}>
-            <Button variant="contained">Cancel</Button>
+          <Grid item xs={2}>
+            <Button variant="contained" onClick={()=> handleReset()}>Cancel</Button>
           </Grid>
-        </Grid>
         <Grid item xs={2}></Grid>
+              </Grid>
       </form>
       <br />
       <div>
