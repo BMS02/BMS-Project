@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 // import ShowItems from "./ShowItems";
 
 function ShowBranch(){
@@ -6,7 +7,16 @@ function ShowBranch(){
     const result = JSON.parse(localStorage.getItem("userdata"));
     console.log(result);
 
-    // const[data,setData]= useState([]);
+    const[data,setData]= useState([]);
+    const getData=async()=>{
+      const result= await axios.get("http://localhost:4040/bank");
+      setData(result.data);
+  };
+      
+  
+  useEffect(()=>{
+      getData();
+  },[])
     // setData(...data)
     // console.log(item)
 
@@ -23,7 +33,7 @@ function ShowBranch(){
             <th>Branch</th>
             
           </tr>
-          {result.map((item) => {
+          {data.map((item) => {
             return (
               <tr>
                 <td>{item.name}</td>
