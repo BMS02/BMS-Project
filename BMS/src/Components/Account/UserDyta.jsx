@@ -1,36 +1,51 @@
-import React,{useState} from 'react'
-import {UserData} from "./User";
+import React,{useState,useEffect} from 'react'
+import axios from 'axios'
+// import {UserData} from "./User";
 function UserDyta() {
-  const result = JSON.parse(localStorage.getItem("newuserdata"));
+  // const result = JSON.parse(localStorage.getItem("newuserdata"));
   // const [userDataShow,setUserDataShow]=useState();
-    console.log(result);
+    // console.log(result);
+    const[data,setData]= useState([]);
+    const getData=async()=>{
+      const result= await axios.get("http://localhost:4040/User");
+      setData(result.data);
+  };
+      
+  
+  
+  useEffect(()=>{
+      getData();
+  },[])
+
+
+
   return (
     <div className='form'>
       <form>
 <h1>Registered Account Holders</h1>
-{
-  result.map((ele)=>{
-    return(
-      <table>
+<table> 
 <tr>
   <th>Name  :</th>
   <th>Email :</th>
   <th>Mobile:</th>
   <th>Password</th>
-  <th>Acc_Bal</th>
+  <th>AccBal</th>
 </tr>
+{
+  data.map((item)=>{
+    return(
 
       <tr>
-        <td>{ele.name}</td>
-        <td>{ele.email}</td>
-        <td>{ele.Mobile}</td>
-        <td>{ele.Password}</td>
-        <td>{ele.Acc_Bal}</td>
+        <td>{item.name}</td>
+        <td>{item.email}</td>
+        <td>{item.mobile}</td>
+        <td>{item.password}</td>
+        <td>{item.accBal}</td>
       </tr>
-      </table>
     )
   })
 }
+  </table>
 </form>
     </div>
   )

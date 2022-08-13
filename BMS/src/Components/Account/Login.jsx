@@ -48,12 +48,12 @@ export const Login = () => {
           <Grid item xs={4}>
             {name === "Ahad" && pwd === "9595" ? (
               <Link to="/login/manageaccount">
-                <Button variant="contained">Login</Button>
+                <Button variant="contained" color="success">Login</Button>
               </Link>
             ):null}
           </Grid>
           <Grid item xs={1}>
-            <Button variant="contained" onClick={() => handleClear()}>
+            <Button variant="contained" color="error" onClick={() => handleClear()}>
               RESET
             </Button>
           </Grid>

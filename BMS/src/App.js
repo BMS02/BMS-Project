@@ -1,7 +1,7 @@
 import './common.css';
 import Navbar from './Components/Navbar';
 import { BrowserRouter , Routes, Route} from "react-router-dom"
-import Home from "./Components/Pages/Home";
+import Home from "./Components//Home/Home";
 import Administration from "./Components/Pages/Administration";
 import SearchBank from "./Components/Pages/SearchBank";
 import ContactUs from "./Components/Pages/ContactUs"
@@ -17,6 +17,7 @@ import UserDyta from './Components/Account/UserDyta';
 import Transaction from './Components/Account/Transaction';
 import { Login } from './Components/Account/Login';
 import Account from './Components/Pages/Account';
+import CreditCard from "./Components/Home/CreditCard";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       <Route path='/components/account/userdyta' element={<UserDyta/>}/>
       <Route path='/components/account/transaction' element={<Transaction/>}/>
       <Route path='/components/createaccount/createacc' element={<CreateAcc/>}/>
+      <Route path='/creditcard' element={<CreditCard/>}/>
     </Routes>
     </BrowserRouter>
     

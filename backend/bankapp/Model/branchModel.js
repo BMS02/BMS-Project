@@ -1,6 +1,6 @@
 const mongoose= require("mongoose");
 
-const branchModel= mongoose.model("asrabanks",{
+const branchModel= mongoose.model("branches",{
     name: {type: String},
     branch: {type: String},
     City: {type: String},

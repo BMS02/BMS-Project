@@ -65,7 +65,7 @@ function Addbank({ handleSubmit }) {
           <Grid container>
             <Grid item xs={4}></Grid>
             <Grid item xs={2}>
-              <Button variant="contained" onClick={()=>handleSubmit(details)}>
+              <Button variant="contained" color="success" onClick={()=>handleSubmit(details)}>
                 Submit
               </Button>
             </Grid>

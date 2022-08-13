@@ -12,7 +12,7 @@ function AddBranch() {
     City: "pune",
   });
   const[issuccess, setIssuccess]=useState(false);
-  const handleSubmit= async ()=>{
+  const handleSubmit= async ()=>{ 
 
     const url= "http://localhost:4040/addbranch";
     const payload={

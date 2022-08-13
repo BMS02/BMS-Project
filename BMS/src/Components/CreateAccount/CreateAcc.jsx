@@ -1,27 +1,66 @@
 import { TextField, Grid, Button,Alert } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
+import axios from 'axios'
 
 
 
-function CreateAcc({handleSubmit}) {
+function CreateAcc() {
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [pancard,setPancard]=useState("");
+  const [mobile,setMobile]=useState("");
+  const [accBal,setAccBal]=useState("");
+  const [address,setAddress]=useState("");
+  // const [AccBal,setAccBal]=useState("");
+  const [password,setPassword]=useState("");
+  const [aadhar,setAadhar]=useState("");
   const [formDetail, setFormDetail] = useState({
     name: "Shaikh Ahad",
     email: "ahadskabdul@gmail.com",
-    Pancard: "KHip2586SE",
-    Mobile: "9604786415",
-    Aadhar: "1880001234",
-    Address: "Aurangabad",
-    Password: "9595",
-    Acc_Bal: "10000"
+    pancard: "KHip2586SE",
+    mobile: "9604786415",
+    aadhar: "1880001234",
+    address: "Aurangabad",
+    password: "9595",
+    accBal: "10000"
   });
+// --------12/08/2022 by Ahad-------
+  const[issuccess, setIssuccess]=useState(false);
+  const handleSubmit= async ()=>{ 
+
+    const url= "http://localhost:4040/createAcc";
+    const payload={
+        name,
+        email,
+        pancard,
+        mobile,
+        aadhar,
+        address,
+        password,
+        accBal,
+    };
+
+    const result= await axios.post(url,payload);
+    if(result.status===200){
+    setIssuccess(true);
+    setName("");
+    setEmail("");
+    setPancard("");
+    setMobile("");
+    setAadhar("");
+    setAddress("");
+    setPassword("");
+    setAccBal("");
+}}
+
   // const [data, setData] = useState([]);
   // const handleSubmit = () => {
   //   setData([...data, formDetail]);
   //   console.log(data);
   // };
-  const handleReset =()=>{
-    setFormDetail(" ");
-  }
+  // const handleReset =()=>{
+  //   setFormDetail(" ");
+  // }
   return (
     <div className="form">
       <form>
@@ -39,7 +78,7 @@ function CreateAcc({handleSubmit}) {
             <TextField
               label="Full Name"
               variant="outlined"
-              onChange={(e) => setFormDetail({ name: e.target.value })}
+              onChange={(e) => setName( e.target.value.toUpperCase())}
             />
           </Grid>
           <Grid item xs={1}>
@@ -51,7 +90,7 @@ function CreateAcc({handleSubmit}) {
               type="email"
               variant="outlined"
               onChange={(e) =>
-                setFormDetail({ ...formDetail, email: e.target.value })
+                setEmail(e.target.value.toUpperCase() )
               }
             />
           </Grid>
@@ -67,8 +106,8 @@ function CreateAcc({handleSubmit}) {
               label="PanCard Number"
               variant="outlined"
               onChange={(e) =>
-                setFormDetail({ ...formDetail, Pancard: e.target.value })
-              }
+setPancard(e.target.value.toUpperCase())
+        }
             />
           </Grid>
           <Grid item xs={1}>
@@ -80,7 +119,7 @@ function CreateAcc({handleSubmit}) {
               type="number"
               variant="outlined"
               onChange={(e) =>
-                setFormDetail({ ...formDetail, Mobile: e.target.value })
+                setMobile(e.target.value.toUpperCase())
               }
             />
           </Grid>
@@ -97,7 +136,7 @@ function CreateAcc({handleSubmit}) {
               variant="outlined"
               type="number"
               onChange={(e) =>
-                setFormDetail({ ...formDetail, Aadhar: e.target.value })
+                setAadhar(e.target.value.toUpperCase())
               }
             />
           </Grid>
@@ -109,7 +148,7 @@ function CreateAcc({handleSubmit}) {
               label="Address"
               variant="outlined"
               onChange={(e) =>
-                setFormDetail({ ...formDetail, Address: e.target.value })
+                setAddress(e.target.value.toUpperCase())
               }
             />
           </Grid>
@@ -124,7 +163,7 @@ function CreateAcc({handleSubmit}) {
               type="number"
 
               onChange={(e) =>
-                setFormDetail({ ...formDetail, password: e.target.value })
+                setPassword(e.target.value.toUpperCase())
               }
             /></Grid>
                       <Grid item xs={1}>Balance:</Grid>
@@ -135,7 +174,7 @@ function CreateAcc({handleSubmit}) {
               type="number"
 
               onChange={(e) =>
-                setFormDetail({ ...formDetail, Acc_Bal: e.target.value })
+                setAccBal(e.target.value.toUpperCase())
               }
               /></Grid>
               </Grid>
@@ -148,10 +187,13 @@ function CreateAcc({handleSubmit}) {
               Submit
             </Button>
           </Grid>
-          <Grid item xs={2}>
+          {/* <Grid item xs={2}>
             <Button variant="contained" onClick={()=> handleReset()}>Cancel</Button>
-          </Grid>
-        <Grid item xs={2}></Grid>
+          </Grid> */}
+        <Grid item xs={2}>
+        {issuccess && (<Alert severity="success"> User  is successfully added!!!</Alert>)}
+        </Grid>
+        
               </Grid>
       </form>
       <br />
