@@ -6,6 +6,7 @@ const ShowBenef = ({ item }) => {
 
 
   const[data,setData]= useState([]);
+  console.log(data)
     const getData=async()=>{
       const result= await axios.get("http://localhost:4040/benef");
       setData(result.data);
@@ -18,14 +19,13 @@ const ShowBenef = ({ item }) => {
   },[])
   return (
     <div>
-      <Card>
+       {data.map((item) => {
+            return (
+            <Card >
         <CardContent>
           <div className="rowdata">
-            {data.map((item)=>  {
-
-
-
-              <Grid container spacing={3}>
+            
+            <Grid container spacing={3}>
               <Grid item xs={2.3}>
                 {item.accno}
               </Grid>
@@ -41,14 +41,15 @@ const ShowBenef = ({ item }) => {
               <Grid item xs={2.3}>
                 {item.bname}
               </Grid>
-              {/* <Grid item xs={2}>
+              <Grid item xs={2}>
                 {item.isActive}
-              </Grid> */}
+              </Grid>
             </Grid>
-            })}
           </div>
         </CardContent>
       </Card>
+            )})};
+      
     </div>
   );
 };

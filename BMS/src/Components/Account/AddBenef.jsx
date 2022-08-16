@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  TextField,
-  Grid,
-  Button,
-  Card,
-  CardContent,
-  Alert,
-} from "@mui/material";
+import {TextField,Grid,Button,Card,CardContent,Alert,} from "@mui/material";
 import axios from "axios";
 
 const AddBenef = () => {
@@ -29,7 +22,7 @@ const AddBenef = () => {
   }, [accno]);
 
   const handelbenef = async () => {
-    const paylode = {
+    const payload = {
       accno,
       bankname,
       branchname,
@@ -38,8 +31,8 @@ const AddBenef = () => {
       isactive,
     };
     const senddata = await axios.post(
-      "http://localhost:4848/api/showBenef",
-      paylode
+      "http://localhost:4040/addBenef",
+      payload
     );
     // console.log(senddata)
     setIsSuccess(senddata.data);
