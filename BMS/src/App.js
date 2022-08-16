@@ -18,6 +18,8 @@ import Transaction from './Components/Account/Transaction';
 import { Login } from './Components/Account/Login';
 import Account from './Components/Pages/Account';
 import CreditCard from "./Components/Home/CreditCard";
+import AddBenef from './Components/Account/AddBenef';
+import ShowBenef from './Components/Account/ShowBenef';
 
 function App() {
   return (
@@ -33,7 +35,8 @@ function App() {
       <Route path='/account' element={<Account/>}/>
       {/* <Route path='/account/manageaccount' element={<ManageAccount/>}/> */}
       <Route path='/components/pages/AddBranch' element={<AddBranch />}/>
-      <Route path='/components/pages/showbranch' element={<ShowBranch/>}/>
+      <Route path='/components/pages/addbenef' element={<AddBenef />}/>
+      <Route path='/components/pages/showbenef' element={<ShowBenef/>}/>
       <Route path='/components/pages/deposit' element={<Deposit/>}/>
       <Route path='/components/pages/showitems' element={<ShowItems/>}/>
       <Route path='/components/account/userdyta' element={<UserDyta/>}/>

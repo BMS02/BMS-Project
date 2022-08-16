@@ -46,12 +46,24 @@ export const Login = () => {
         <Grid container spacing={2}>
           <Grid item xs={2}></Grid>
           <Grid item xs={4}>
-            {name === "Ahad" && pwd === "9595" ? (
+            {name === "Ahad" && pwd === "9595"  ? (
               <Link to="/login/manageaccount">
                 <Button variant="contained" color="success">Login</Button>
-              </Link>
+              </Link> 
+            ):null}
+            {name === "Admin" && pwd === "1212" ? (
+              <Link to="/Administration">
+                <Button variant="contained" color="success">Login</Button>
+              </Link> 
             ):null}
           </Grid>
+          {/* <Grid item xs={4}>
+            if(name === "Ahad" && pwd === "9595"){
+              <Link to ="Login/manageaccount">
+                <Button variant="conatined" color="success">Login</Button>
+              </Link>
+  
+          </Grid> */}
           <Grid item xs={1}>
             <Button variant="contained" color="error" onClick={() => handleClear()}>
               RESET

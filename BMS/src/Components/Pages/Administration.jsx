@@ -31,7 +31,7 @@ import UserDyta from "../Account/UserDyta";
 // import ShowItems from "./ShowItems";
 
 function Administration(){
-  const [val,setVal]=useState("addbank");
+  const [val,setVal]=useState("addbranch");
   const [data,setData]=useState([])
 
   
@@ -47,6 +47,7 @@ function Administration(){
       <Tabs value={val} onChange={(e,val)=> setVal(val)} >
         <Tab value="addbranch" label="Add Branch"/>
         <Tab value="showbranch" label="Show Branch"/>
+        
         <Tab value="user" label="User"/>
         {/* <Tab value="showitem" label="SHow Item"/> */}
         {/* <Tab value="deposit" label="Deposit"/> */}
@@ -57,6 +58,7 @@ function Administration(){
  
       {val==="addbranch" && <AddBranch handleSubmit={handleSubmit}/>}
       {val==="showbranch" && <ShowBranch />}
+    
       {val==="user" && <UserDyta/>}
       {/* {val==="showitem" && <ShowItems />} */}
       {/* {val==="deposit" && <Deposit/>} */}

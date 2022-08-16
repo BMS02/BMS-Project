@@ -94,7 +94,7 @@ function ContactUs() {
 
         
       </div>
-      <h1>The end</h1>
+      {/* <h1>The end</h1> */}
       </div>
       {/* <h1 >BMS has evolved over the years...</h1>
                 <Grid container spacing={2}>

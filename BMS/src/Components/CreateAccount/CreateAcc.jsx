@@ -9,7 +9,7 @@ function CreateAcc() {
   const [email,setEmail]=useState("");
   const [pancard,setPancard]=useState("");
   const [mobile,setMobile]=useState("");
-  const [accBal,setAccBal]=useState("");
+  const [accBal,setAccBal]=useState(0);
   const [address,setAddress]=useState("");
   // const [AccBal,setAccBal]=useState("");
   const [password,setPassword]=useState("");
@@ -169,7 +169,7 @@ setPancard(e.target.value.toUpperCase())
                       <Grid item xs={1}>Balance:</Grid>
 
             <Grid item xs={4}> <TextField
-              label="Acc_Bal"
+              label="Acc Bal"
               variant="outlined"
               type="number"
 

@@ -15,12 +15,6 @@ app.get("/bank", async (req,res)=>{
     res.send(result);
 
 });
-app.get("/User", async (req,res)=>{
-    Connectdb();
-    const result= await newUser.find({});
-    res.send(result);
-
-});
 
 app.post("/addbranch", (req,res)=>{
     Connectdb();
@@ -28,12 +22,42 @@ app.post("/addbranch", (req,res)=>{
     newBranch.save();
     res.send("new branch added succesfully")
 });
+app.get("/User", async (req,res)=>{
+    Connectdb();
+    const result= await newUser.find({});
+    res.send(result);
+
+});
 
 app.post("/createAcc", (req,res)=>{
     Connectdb();
     const newCus= new newUser(req.body);
     newCus.save();
     res.send("new user added succesfully")
+});
+app.get("/Trans", async (req,res)=>{
+    Connectdb();
+    const result= await newtransaction.find({});
+    res.send(result); 
+
+});
+app.post("/showTransaction", (req,res)=>{
+    Connectdb();
+    const newTrans= new newtransaction(req.body);
+    newTrans.save();
+    res.send("Transaction succesfull")
+});
+app.get("/benef", async (req,res)=>{
+    Connectdb();
+    const result= await Benef.find({});
+    res.send(result); 
+    
+});
+app.post("/showBenef", (req,res)=>{
+    Connectdb();
+    const newBenef= new Benef(req.body);
+    newBenef.save();
+    res.send("Beneficiary added succesfully")
 });
 
  app.listen(4040,()=>{

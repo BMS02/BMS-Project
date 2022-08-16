@@ -5,6 +5,8 @@ import UserDyta from "./UserDyta";
 import Transaction from "./Transaction";
 import { UserData } from "./User";
 import ShowTransaction from "./ShowTransaction";
+import AddBenef from "./AddBenef";
+import ShowBenef from "./ShowBenef";
 
 export const ManageAccount = () => {
   const [val, setVal] = useState("userdyta");
@@ -27,14 +29,18 @@ export const ManageAccount = () => {
 
       <div className="Tabs">
         <Tabs value={val} onChange={(e, val) => setVal(val)}>
-          <Tab value="userDyta" label="userData" />
+          {/* <Tab value="userDyta" label="userData" /> */}
           <Tab value="transaction" label="Transaction" />
           <Tab value="showtransaction" label=" Show Transaction" />
+          <Tab value="addbenef" label="Add Beneficiary"/>
+        <Tab value="showbenef" label="Show Beneficiary"/>
         </Tabs>
       </div>
-      {val === "userDyta" && <UserDyta />}
+      {/* {val === "userDyta" && <UserDyta />} */}
       {val === "transaction" && <Transaction  handletransaction={handletransaction} benef={benef} />}
       {val === "showtransaction" && <ShowTransaction ShowAccBal={transactiondetails} />}
+      {val==="addbenef" && <AddBenef/>}
+      {val==="showbenef" && <ShowBenef/>}
     </div>
   );
 };
