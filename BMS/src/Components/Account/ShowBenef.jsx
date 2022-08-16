@@ -21,8 +21,11 @@ const ShowBenef = ({ item }) => {
       <Card>
         <CardContent>
           <div className="rowdata">
-            
-            <Grid container spacing={3}>
+            {data.map((item)=>  {
+
+
+
+              <Grid container spacing={3}>
               <Grid item xs={2.3}>
                 {item.accno}
               </Grid>
@@ -42,6 +45,7 @@ const ShowBenef = ({ item }) => {
                 {item.isActive}
               </Grid> */}
             </Grid>
+            })}
           </div>
         </CardContent>
       </Card>
