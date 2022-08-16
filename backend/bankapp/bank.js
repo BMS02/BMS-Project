@@ -5,6 +5,7 @@ const mongoose= require("mongoose");
 const Connectdb= require("./Connectdb");
 const branchModel = require("./Model/Branchmodel");
 const newUser = require("./Model/newUser");
+const benefModel= require("./Model/benefModel")
 
 app.use(express.json());
 app.use(cors());
@@ -49,13 +50,13 @@ app.post("/showTransaction", (req,res)=>{
 });
 app.get("/benef", async (req,res)=>{
     Connectdb();
-    const result= await Benef.find({});
+    const result= await benefModel.find({});
     res.send(result); 
     
 });
-app.post("/showBenef", (req,res)=>{
+app.post("/addBenef", (req,res)=>{
     Connectdb();
-    const newBenef= new Benef(req.body);
+    const newBenef= new benefModel(req.body);
     newBenef.save();
     res.send("Beneficiary added succesfully")
 });

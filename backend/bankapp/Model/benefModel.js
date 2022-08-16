@@ -1,6 +1,6 @@
 const mongoose= require("mongoose");
 
-const Benef= mongoose.model("benefs",{
+const benefModel= mongoose.model("benficiaries",{
    accno :{type: String},
       bankname:{type: String},
       branchname: {type: String},
@@ -9,4 +9,4 @@ const Benef= mongoose.model("benefs",{
       
 });
 
-module.exports = branchModel;
+module.exports = benefModel;
